@@ -9,7 +9,7 @@ The classifier is trained on hashed byte 4-gram features and supports:
 - Ensemble methods (score averaging and majority voting)
 - Optional data shuffling to explore the effect of SGD input order
 
-(Originally assignment for distributed computing class, so the txt data in the following commands cannot be posted publicly, please contact me to get those data)
+(Originally assignment for distributed computing class, so the data and c programs in the following commands cannot be posted publicly, please contact me to get those data)
 
 Steps to run:
 1. Compile the C program: ```gcc -O2 -o compute_spam_metrics compute_spam_metrics.c -lm```
