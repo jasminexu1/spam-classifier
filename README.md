@@ -16,11 +16,11 @@ Steps to run:
 2. Compile the program: ```mvn clean package```
 3. Run the trainer: 
 ```
-spark-submit --driver-memory 2g --class SpamTrainer target/spam-classifier.jar --input spam.train.group_x.txt --model output-model-group_x
+spark-submit --driver-memory 2g --class SpamTrainer target/spam-classifier-0.1.jar --input spam.train.group_x.txt --model output-model-group_x
 ```
 4. Run the predictor: 
 ```
-spark-submit --driver-memory 2g --class SpamPredictor target/spam-classifier.jar --input spam.test.qrels.txt --output test-group_x --model output-model-group_x
+spark-submit --driver-memory 2g --class SpamPredictor target/spam-classifier-0.1.jar --input spam.test.qrels.txt --output test-group_x --model output-model-group_x
 ```
 5. Evaluate: ```./spam_eval.sh test-group_x```
 
@@ -34,6 +34,6 @@ cp model-britney/part-00000 model-fusion/part-00002
 ```
 2. Run 
 ```
-spark-submit --driver-memory 2g --class EnsembleSpamPredictor target/spam-classifier.jar --input spam.test.qrels.txt --output test-fusion-average --model model-fusion --method average
+spark-submit --driver-memory 2g --class EnsembleSpamPredictor target/spam-classifier-0.1.jar --input spam.test.qrels.txt --output test-fusion-average --model model-fusion --method average
 ```
 to use the ensemble predictor to combine model outputs by averaging or voting.
